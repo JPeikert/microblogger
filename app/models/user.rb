@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   has_secure_password
 
+
   # Creates remember token and saves digest to the DB column.
   def remember
     self.remember_token = User.new_token
@@ -29,6 +30,17 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  # Activates an account.
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  # Sends activation email.
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
@@ -39,6 +51,7 @@ class User < ApplicationRecord
   def User.new_token
     SecureRandom.urlsafe_base64
   end
+
 
 
   private
