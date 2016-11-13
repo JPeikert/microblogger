@@ -311,6 +311,25 @@ span.picture {
 
 
 
+/* footer hack */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 50px;
+}
+
+footer {
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+
 /* miscellaneous */
 
 .debug_dump {

@@ -9,5 +9,12 @@
       <%= gravatar_for @user %>
       <a href="http://gravatar.com/emails" target="_blank" rel="noopener">change</a>
     </div>
+    <% if !current_user.admin? && current_user?(@user) %>
+      <div class="row">
+        <div id="delete_account" class="col-md-3 col-md-offset-9">
+          <%= link_to "Delete Account", @user, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
