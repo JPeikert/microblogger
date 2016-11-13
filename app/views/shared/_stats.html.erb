@@ -10,6 +10,8 @@
     <strong id="followers" class="stat">
       <%= followers_count = @user.followers.count %>
     </strong>
-    <%= "follower".pluralize(followers_count) %>
+    <strong id="followers_count" class="stat">
+      <%= "follower".pluralize(followers_count) %>
+    </strong>
   </a>
 </div>
