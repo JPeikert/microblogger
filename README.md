@@ -11,7 +11,7 @@ This application is an exercise for
 Learn Web Development with Rails*](http://www.railstutorial.org/)
 by [Michael Hartl](http://www.michaelhartl.com/).
 
-###[View Live](https://jpeikert-sample-app.herokuapp.com)
+###[View Live](https://jpeikert-microblogger.herokuapp.com/)
 
 ## Getting started
 
