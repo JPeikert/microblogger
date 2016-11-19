@@ -330,6 +330,25 @@ footer {
 }
 
 
+
+/* microposts animations */
+
+.slide_left {
+  animation: slide_left 0.5s ease forwards;
+}
+
+.in_place {
+  transform: translateX(0);
+  animation: none;
+}
+
+@keyframes slide_left {
+  from { transform: translateX(150px); }
+  to { transform: translateX(0); }
+}
+
+
+
 /* miscellaneous */
 
 .debug_dump {
